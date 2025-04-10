@@ -10,6 +10,16 @@ test('GET heathly - status 200', async ({ }) => {
     expect(responseBody.data).toBeOK();
   });
 
+test('GET user - status 200', async ({ }) => {
+    const apiContext = await request.newContext();
+    const response = await apiContext.get('https://api.stg.secapa.jp/');
+  
+    expect(response.status()).toBe(200);
+  
+    const responseBody = await response.json();
+    expect(responseBody.data).toBeOK();
+  });
+
 test('POST login - status 201 and data check', async ({ }) => {
     const apiContext = await request.newContext();
     const response = await apiContext.post('https://api.stg.secapa.jp/auth/login',
