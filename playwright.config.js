@@ -7,6 +7,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     baseURL: 'https://app.secapa.jp/',
+    workers: process.env.CI ? 4 : undefined,
   },
   projects: [
     {
