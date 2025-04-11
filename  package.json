@@ -16,7 +16,7 @@
     "automation",
     "testing"
   ],
-  "author": "Your Name",
+  "author": "NguyetTruong",
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.42.1",
