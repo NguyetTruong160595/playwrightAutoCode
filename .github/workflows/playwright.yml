@@ -14,11 +14,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+
     - name: Run Playwright Tests
       run: npm run test
-      
-    - name: Upload test results
+
+    - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: playwright-report
-        path: playwright-report/
+        name: test-results
+        path: path/to/artifact
+      
