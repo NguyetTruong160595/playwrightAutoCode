@@ -9,24 +9,22 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+        working-directory: ./playwrightAutoCode
 
-      - name: Install Playwright Browsers
+      - name: Install Playwright browsers
         run: npx playwright install --with-deps
+        working-directory: ./playwrightAutoCode
 
-      - name: Compile TypeScript
-        run: npx tsc
-
-      - name: Run Playwright tests
+      - name: Run tests
         run: npx playwright test
+        working-directory: ./playwrightAutoCode
