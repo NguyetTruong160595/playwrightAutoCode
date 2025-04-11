@@ -18,9 +18,9 @@ jobs:
     - name: Run Playwright Tests
       run: npm run test
 
-    - name: Upload artifact
+    - name: Upload Playwright report
       uses: actions/upload-artifact@v3
       with:
-        name: test-results
-        path: path/to/artifact
+        name: playwright-report
+        path: playwright-report/
       
