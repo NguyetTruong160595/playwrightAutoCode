@@ -25,7 +25,7 @@ test('POST login - status 201 and data check', async ({ }) => {
     const response = await apiContext.post('https://api.stg.secapa.jp/auth/login',
     {
         data: {
-            "mail": "nguyettruong+1@freec.asia",
+            "mail": "nguyettruong+2000@freec.asia",
             "password": "12345678"
         },
     });
@@ -40,8 +40,8 @@ test('POST create user - status 201', async ({ }) => {
   const apiContext = await request.newContext();
   const response = await apiContext.post('https://api.stg.secapa.jp/auth/upsertRegistration', {
     data: {
-        "mail": "nguyettruong+1008@freec.asia",
-        "password": "free!123",
+        "mail": "nguyettruong+2000@freec.asia",
+        "password": "12345678",
         "gender_code": "1",
         "is_terms_consented": true,
         "utm": "",
