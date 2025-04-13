@@ -1,4 +1,4 @@
- 1. Initialize a Node.js project
+✅ 1. Initialize a Node.js project
 First, create a new project folder and initialize it with npm:
 mkdir playwright-ts-project
 cd playwright-ts-project
