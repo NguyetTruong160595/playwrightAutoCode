@@ -19,5 +19,9 @@
     "url": "https://github.com/NguyetTruong160595/playwrightAutoCode/issues"
   },
   "homepage": "https://github.com/NguyetTruong160595/playwrightAutoCode#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@playwright/test": "^1.51.1",
+    "playwright": "^1.51.1"
+  }
 }
