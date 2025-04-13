@@ -1,4 +1,5 @@
 // playwright.config.js
+require('dotenv').config();
 const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
@@ -16,7 +17,7 @@ module.exports = defineConfig({
     viewport: { width: 1280, height: 720 }, // Set the browser viewport size
     actionTimeout: 5000, // Timeout for actions like clicks, typing
     ignoreHTTPSErrors: true, // Ignore SSL errors (useful in CI environments)
-    baseURL: process.env.BASE_URL || 'https://your-application-url.com', // Use environment variable for base URL
+    baseURL: process.env.BASE_URL || 'https://app.secapa.jp/login/', // Use environment variable for base URL
   },
   projects: [
     {
