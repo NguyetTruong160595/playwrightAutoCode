@@ -22,7 +22,7 @@ export async function connectViaSSHTunnel() {
       host: '57.180.185.14',
       port: 22,
       username: 'ec2-user',
-      privateKey: require('fs').readFileSync('/Users/nguyettruong/Downloads/secapa-dev'),
+      //privateKey: require('fs').readFileSync('/Users/nguyettruong/Downloads/secapa-dev'),
     });
   });
 }

@@ -1,0 +1,6 @@
+# .gitignore
+node_modules/
+*.pem
+*.key
+id_rsa
+node_modules/ssh2/test/fixtures/id_rsa
