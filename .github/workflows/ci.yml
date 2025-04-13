@@ -19,12 +19,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: playwrightAutoCode
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
-        working-directory: playwrightAutoCode
 
       - name: Run tests
         run: npx playwright test
-        working-directory: playwrightAutoCode
