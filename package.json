@@ -1,0 +1,23 @@
+{
+  "name": "autotest",
+  "version": "1.0.0",
+  "main": "playwright.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyetTruong160595/playwrightAutoCode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NguyetTruong160595/playwrightAutoCode/issues"
+  },
+  "homepage": "https://github.com/NguyetTruong160595/playwrightAutoCode#readme",
+  "description": ""
+}
