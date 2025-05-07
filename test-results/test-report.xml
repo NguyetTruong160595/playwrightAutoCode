@@ -1,10 +1,10 @@
-<testsuites id="" name="" tests="15" failures="10" skipped="0" errors="0" time="22.505196">
-<testsuite name="api/user-api.spec.ts" timestamp="2025-04-13T07:27:29.484Z" hostname="firefox" tests="4" failures="2" skipped="0" time="2.03" errors="0">
-<testcase name="GET heathly - status 200" classname="api/user-api.spec.ts" time="0.625">
+<testsuites id="" name="" tests="6" failures="3" skipped="0" errors="0" time="2.1237719999999998">
+<testsuite name="api/user-api.spec.ts" timestamp="2025-05-07T08:45:44.179Z" hostname="firefox" tests="2" failures="1" skipped="0" time="1.306" errors="0">
+<testcase name="GET heathly - status 200 @smoke" classname="api/user-api.spec.ts" time="0.864">
 </testcase>
-<testcase name="GET user - status 200" classname="api/user-api.spec.ts" time="0.195">
-<failure message="user-api.spec.ts:13:5 GET user - status 200" type="FAILURE">
-<![CDATA[  [firefox] › api/user-api.spec.ts:13:5 › GET user - status 200 ────────────────────────────────────
+<testcase name="POST login - status 201 and data check @smoke" classname="api/user-api.spec.ts" time="0.442">
+<failure message="user-api.spec.ts:23:5 POST login - status 201 and data check @smoke" type="FAILURE">
+<![CDATA[  [firefox] › api/user-api.spec.ts:23:5 › POST login - status 201 and data check @smoke ────────────
 
     Error: toBeOK can be only used with APIResponse object
 
@@ -14,198 +14,8 @@
          |                               ^
       11 |   });
       12 |
-      13 | test('GET user - status 200', async ({ }) => {
+      13 | test('GET user - status 200 @regression @regression', async ({ }) => {
         at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:10:31
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: 200
-    Received: 404
-
-      15 |     const response = await apiContext.get('https://api.stg.secapa.jp/');
-      16 |   
-    > 17 |     expect(response.status()).toBe(200);
-         |                               ^
-      18 |   
-      19 |     const responseBody = await response.json();
-      20 |     expect(responseBody.data).toBeOK();
-        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:17:31
-]]>
-</failure>
-</testcase>
-<testcase name="POST login - status 201 and data check" classname="api/user-api.spec.ts" time="0.367">
-<failure message="user-api.spec.ts:23:5 POST login - status 201 and data check" type="FAILURE">
-<![CDATA[  [firefox] › api/user-api.spec.ts:23:5 › POST login - status 201 and data check ───────────────────
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: 201
-    Received: 404
-
-      31 |     });
-      32 |   
-    > 33 |     expect(response.status()).toBe(201);
-         |                               ^
-      34 |   
-      35 |     const responseBody = await response.json();
-      36 |     expect(responseBody.data).toHaveProperty('user_id');
-        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:33:31
-]]>
-</failure>
-</testcase>
-<testcase name="POST create user - status 201" classname="api/user-api.spec.ts" time="0.843">
-</testcase>
-</testsuite>
-<testsuite name="login.spec.js" timestamp="2025-04-13T07:27:29.484Z" hostname="firefox" tests="1" failures="1" skipped="0" time="11.099" errors="0">
-<testcase name="User can login with valid credentials" classname="login.spec.js" time="11.099">
-<failure message="login.spec.js:5:5 User can login with valid credentials" type="FAILURE">
-<![CDATA[  [firefox] › login.spec.js:5:5 › User can login with valid credentials ────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
-
-    Locator: locator(':root')
-    Expected pattern: /.*dashboard/
-    Received string:  "https://app.secapa.jp/login/"
-    Call log:
-      - expect.toHaveURL with timeout 5000ms
-      - waiting for locator(':root')
-        9 × locator resolved to <html lang="ja" data-capo="">…</html>
-          - unexpected value "https://app.secapa.jp/login/"
-
-
-       9 |   await loginPage.login(process.env.BASE_URL, '12345678');
-      10 |
-    > 11 |   await expect(page).toHaveURL(/.*dashboard/);
-         |                      ^
-      12 | });
-      13 |
-        at /Users/nguyettruong/Desktop/autoTest/tests/login.spec.js:11:22
-]]>
-</failure>
-</testcase>
-</testsuite>
-<testsuite name="api/user-api.spec.ts" timestamp="2025-04-13T07:27:29.484Z" hostname="webkit" tests="4" failures="2" skipped="0" time="1.9" errors="0">
-<testcase name="GET heathly - status 200" classname="api/user-api.spec.ts" time="0.647">
-</testcase>
-<testcase name="GET user - status 200" classname="api/user-api.spec.ts" time="0.255">
-<failure message="user-api.spec.ts:13:5 GET user - status 200" type="FAILURE">
-<![CDATA[  [webkit] › api/user-api.spec.ts:13:5 › GET user - status 200 ─────────────────────────────────────
-
-    Error: toBeOK can be only used with APIResponse object
-
-       8 |   
-       9 |     const responseBody = await response.json();
-    > 10 |     expect(responseBody.data).toBeOK();
-         |                               ^
-      11 |   });
-      12 |
-      13 | test('GET user - status 200', async ({ }) => {
-        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:10:31
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: 200
-    Received: 404
-
-      15 |     const response = await apiContext.get('https://api.stg.secapa.jp/');
-      16 |   
-    > 17 |     expect(response.status()).toBe(200);
-         |                               ^
-      18 |   
-      19 |     const responseBody = await response.json();
-      20 |     expect(responseBody.data).toBeOK();
-        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:17:31
-]]>
-</failure>
-</testcase>
-<testcase name="POST login - status 201 and data check" classname="api/user-api.spec.ts" time="0.28">
-<failure message="user-api.spec.ts:23:5 POST login - status 201 and data check" type="FAILURE">
-<![CDATA[  [webkit] › api/user-api.spec.ts:23:5 › POST login - status 201 and data check ────────────────────
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: 201
-    Received: 404
-
-      31 |     });
-      32 |   
-    > 33 |     expect(response.status()).toBe(201);
-         |                               ^
-      34 |   
-      35 |     const responseBody = await response.json();
-      36 |     expect(responseBody.data).toHaveProperty('user_id');
-        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:33:31
-]]>
-</failure>
-</testcase>
-<testcase name="POST create user - status 201" classname="api/user-api.spec.ts" time="0.718">
-</testcase>
-</testsuite>
-<testsuite name="login.spec.js" timestamp="2025-04-13T07:27:29.484Z" hostname="webkit" tests="1" failures="1" skipped="0" time="9.769" errors="0">
-<testcase name="User can login with valid credentials" classname="login.spec.js" time="9.769">
-<failure message="login.spec.js:5:5 User can login with valid credentials" type="FAILURE">
-<![CDATA[  [webkit] › login.spec.js:5:5 › User can login with valid credentials ─────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
-
-    Locator: locator(':root')
-    Expected pattern: /.*dashboard/
-    Received string:  "https://app.secapa.jp/login/"
-    Call log:
-      - expect.toHaveURL with timeout 5000ms
-      - waiting for locator(':root')
-        9 × locator resolved to <html lang="ja" data-capo="">…</html>
-          - unexpected value "https://app.secapa.jp/login/"
-
-
-       9 |   await loginPage.login(process.env.BASE_URL, '12345678');
-      10 |
-    > 11 |   await expect(page).toHaveURL(/.*dashboard/);
-         |                      ^
-      12 | });
-      13 |
-        at /Users/nguyettruong/Desktop/autoTest/tests/login.spec.js:11:22
-]]>
-</failure>
-</testcase>
-</testsuite>
-<testsuite name="api/user-api.spec.ts" timestamp="2025-04-13T07:27:29.484Z" hostname="chrome" tests="4" failures="3" skipped="0" time="1.995" errors="0">
-<testcase name="GET heathly - status 200" classname="api/user-api.spec.ts" time="0.349">
-</testcase>
-<testcase name="GET user - status 200" classname="api/user-api.spec.ts" time="0.208">
-<failure message="user-api.spec.ts:13:5 GET user - status 200" type="FAILURE">
-<![CDATA[  [chrome] › api/user-api.spec.ts:13:5 › GET user - status 200 ─────────────────────────────────────
-
-    Error: toBeOK can be only used with APIResponse object
-
-       8 |   
-       9 |     const responseBody = await response.json();
-    > 10 |     expect(responseBody.data).toBeOK();
-         |                               ^
-      11 |   });
-      12 |
-      13 | test('GET user - status 200', async ({ }) => {
-        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:10:31
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: 200
-    Received: 404
-
-      15 |     const response = await apiContext.get('https://api.stg.secapa.jp/');
-      16 |   
-    > 17 |     expect(response.status()).toBe(200);
-         |                               ^
-      18 |   
-      19 |     const responseBody = await response.json();
-      20 |     expect(responseBody.data).toBeOK();
-        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:17:31
-]]>
-</failure>
-</testcase>
-<testcase name="POST login - status 201 and data check" classname="api/user-api.spec.ts" time="0.673">
-<failure message="user-api.spec.ts:23:5 POST login - status 201 and data check" type="FAILURE">
-<![CDATA[  [chrome] › api/user-api.spec.ts:23:5 › POST login - status 201 and data check ────────────────────
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -223,51 +33,73 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="POST create user - status 201" classname="api/user-api.spec.ts" time="0.765">
-<failure message="user-api.spec.ts:39:5 POST create user - status 201" type="FAILURE">
-<![CDATA[  [chrome] › api/user-api.spec.ts:39:5 › POST create user - status 201 ─────────────────────────────
+</testsuite>
+<testsuite name="api/user-api.spec.ts" timestamp="2025-05-07T08:45:44.179Z" hostname="webkit" tests="2" failures="1" skipped="0" time="1.262" errors="0">
+<testcase name="GET heathly - status 200 @smoke" classname="api/user-api.spec.ts" time="0.804">
+</testcase>
+<testcase name="POST login - status 201 and data check @smoke" classname="api/user-api.spec.ts" time="0.458">
+<failure message="user-api.spec.ts:23:5 POST login - status 201 and data check @smoke" type="FAILURE">
+<![CDATA[  [webkit] › api/user-api.spec.ts:23:5 › POST login - status 201 and data check @smoke ─────────────
+
+    Error: toBeOK can be only used with APIResponse object
+
+       8 |   
+       9 |     const responseBody = await response.json();
+    > 10 |     expect(responseBody.data).toBeOK();
+         |                               ^
+      11 |   });
+      12 |
+      13 | test('GET user - status 200 @regression @regression', async ({ }) => {
+        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:10:31
 
     Error: expect(received).toBe(expected) // Object.is equality
 
     Expected: 201
     Received: 400
 
-      53 |   });
-      54 |
-    > 55 |   expect(response.status()).toBe(201);
-         |                             ^
-      56 |
-      57 |   const body = await response.json();
-      58 |   expect(body.data).toHaveProperty('mail', process.env.MAIL);
-        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:55:29
+      31 |     });
+      32 |   
+    > 33 |     expect(response.status()).toBe(201);
+         |                               ^
+      34 |   
+      35 |     const responseBody = await response.json();
+      36 |     expect(responseBody.data).toHaveProperty('user_id');
+        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:33:31
 ]]>
 </failure>
 </testcase>
 </testsuite>
-<testsuite name="login.spec.js" timestamp="2025-04-13T07:27:29.484Z" hostname="chrome" tests="1" failures="1" skipped="0" time="9.427" errors="0">
-<testcase name="User can login with valid credentials" classname="login.spec.js" time="9.427">
-<failure message="login.spec.js:5:5 User can login with valid credentials" type="FAILURE">
-<![CDATA[  [chrome] › login.spec.js:5:5 › User can login with valid credentials ─────────────────────────────
+<testsuite name="api/user-api.spec.ts" timestamp="2025-05-07T08:45:44.179Z" hostname="chrome" tests="2" failures="1" skipped="0" time="1.257" errors="0">
+<testcase name="GET heathly - status 200 @smoke" classname="api/user-api.spec.ts" time="0.797">
+</testcase>
+<testcase name="POST login - status 201 and data check @smoke" classname="api/user-api.spec.ts" time="0.46">
+<failure message="user-api.spec.ts:23:5 POST login - status 201 and data check @smoke" type="FAILURE">
+<![CDATA[  [chrome] › api/user-api.spec.ts:23:5 › POST login - status 201 and data check @smoke ─────────────
 
-    Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+    Error: toBeOK can be only used with APIResponse object
 
-    Locator: locator(':root')
-    Expected pattern: /.*dashboard/
-    Received string:  "https://app.secapa.jp/login/"
-    Call log:
-      - expect.toHaveURL with timeout 5000ms
-      - waiting for locator(':root')
-        9 × locator resolved to <html lang="ja" data-capo="">…</html>
-          - unexpected value "https://app.secapa.jp/login/"
+       8 |   
+       9 |     const responseBody = await response.json();
+    > 10 |     expect(responseBody.data).toBeOK();
+         |                               ^
+      11 |   });
+      12 |
+      13 | test('GET user - status 200 @regression @regression', async ({ }) => {
+        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:10:31
 
+    Error: expect(received).toBe(expected) // Object.is equality
 
-       9 |   await loginPage.login(process.env.BASE_URL, '12345678');
-      10 |
-    > 11 |   await expect(page).toHaveURL(/.*dashboard/);
-         |                      ^
-      12 | });
-      13 |
-        at /Users/nguyettruong/Desktop/autoTest/tests/login.spec.js:11:22
+    Expected: 201
+    Received: 400
+
+      31 |     });
+      32 |   
+    > 33 |     expect(response.status()).toBe(201);
+         |                               ^
+      34 |   
+      35 |     const responseBody = await response.json();
+      36 |     expect(responseBody.data).toHaveProperty('user_id');
+        at /Users/nguyettruong/Desktop/autoTest/tests/api/user-api.spec.ts:33:31
 ]]>
 </failure>
 </testcase>

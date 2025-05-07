@@ -1,6 +1,6 @@
 import { test, expect, request } from '@playwright/test';
 
-test('GET heathly - status 200', async ({ }) => {
+test('GET heathly - status 200 @smoke', async ({ }) => {
     const apiContext = await request.newContext();
     const response = await apiContext.get('https://api.stg.secapa.jp/health');
   
@@ -10,7 +10,7 @@ test('GET heathly - status 200', async ({ }) => {
     expect(responseBody.data).toBeOK();
   });
 
-test('GET user - status 200', async ({ }) => {
+test('GET user - status 200 @regression', async ({ }) => {
     const apiContext = await request.newContext();
     const response = await apiContext.get('https://api.stg.secapa.jp/');
   
@@ -20,7 +20,7 @@ test('GET user - status 200', async ({ }) => {
     expect(responseBody.data).toBeOK();
   });
 
-test('POST login - status 201 and data check', async ({ }) => {
+test('POST login - status 201 and data check @smoke', async ({ }) => {
     const apiContext = await request.newContext();
     const response = await apiContext.post('https://api.stg.secapa.jp/auth/login',
     {
@@ -36,7 +36,7 @@ test('POST login - status 201 and data check', async ({ }) => {
     expect(responseBody.data).toHaveProperty('user_id');
   });
 
-test('POST create user - status 201', async ({ }) => {
+test('POST create user - status 201 @smoke', async ({ }) => {
   const apiContext = await request.newContext();
   const response = await apiContext.post('https://api.stg.secapa.jp/auth/upsertRegistration', {
     data: {

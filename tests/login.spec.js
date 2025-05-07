@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 require('dotenv').config();
 
-test('User can login with valid credentials', async ({ page }) => {
+test('User can login with valid credentials @regression', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await loginPage.goto();
