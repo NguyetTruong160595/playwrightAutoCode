@@ -27,7 +27,7 @@ jobs:
         run: npx playwright test --grep @smoke --reporter=html
 
       - name: Upload Playwright HTML report
-        if: always() # Ensure report uploads even if tests fail
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: playwright-report
