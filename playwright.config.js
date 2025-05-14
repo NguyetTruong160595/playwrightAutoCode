@@ -34,4 +34,5 @@ module.exports = defineConfig({
     },
   ],
   workers: process.env.CI ? 2 : undefined, // Adjust the number of parallel workers for CI/CD (set lower for CI environments)
+  reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
 });
